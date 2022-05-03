@@ -1,0 +1,21 @@
+﻿@model FirstWebAppMVC.ViewModels.AnimalListViewModel
+
+@{
+    ViewData["Title"] = "Animals";
+}
+
+<h1>All Animals</h1>
+<ul>
+    @foreach (var animal in Model.Animals)
+    {
+        <li>
+            <a asp-controller="Animal" asp-route-id="@animal.Name"></a>
+        </li>
+        <li>
+            <a asp-controller="Animal" asp-route-id="@animal.Latin_Name"></a>
+        </li>
+        <li>
+            <a asp-controller="Animal" asp-route-id="@animal.Habitat"></a>
+        </li>
+    }
+</ul>
